@@ -32,7 +32,6 @@ var config = {
       template: './examples/src/index.html',
     }],
     files: [
-      './README.md',
       './dist/react-menu.css'
     ],
 

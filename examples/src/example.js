@@ -2,18 +2,19 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Menu = require('react-menu');
 
-console.log(Menu);
-
-var data = [
-	{id: 1, author: 'Pete Hunt', text: 'This is one comment'},
-	{id: 2, author: 'Jordan Walke', text: 'This is *another* comment'}
-]
-
-var items = ['Menu1', 'Menu2', 'Menu3', 'Menu4'];
-
-var handleCommentSubit = function(comment){
-
-}
+var items = [{
+			route: '#',
+			label: 'Item 1'
+		}, {
+			route: '#',
+			label: 'Item 2'
+		}, {
+			route: '#',
+			label: 'Item 3'
+		}, {
+			route: '#',
+			label: 'Item 4'
+		},]
 
 var App = React.createClass({
 	render () {

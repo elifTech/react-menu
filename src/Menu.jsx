@@ -1,11 +1,12 @@
 import React from 'react';
-import MenuItem from './MenuItem';
+import MenuItem from './MenuItem.jsx';
 
 class Menu extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {focused: 0};
+    this.clicked = this.clicked.bind(this);
   }
 
   clicked (index){
@@ -14,18 +15,11 @@ class Menu extends React.Component {
 
   render() {
     var self = this;
-    console.log(MenuItem);
 
     return (
       <div>
-				<ul>{ this.props.items.map(function(m, index){
-					var style = '';
-
-					if(self.state.focused === index){
-						style = 'focused';
-					}
-
-					return <MenuItem>{m}</MenuItem>;
+				<ul>{ this.props.items.map(function(menuItem, index){
+					return <MenuItem key={index} id={index} focused={self.state.focused === index} onClick={self.clicked}>{menuItem}</MenuItem>;
 				})}
 				</ul>
 			</div>

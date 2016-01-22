@@ -4,15 +4,21 @@ import classNames from 'classnames';
 class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {focused: props.focused};
+    this.clicked = this.clicked.bind(this);
+  }
+
+  clicked() {
+    this.props.onClick(this.props.id);
   }
 
   render() {
     var menuItemClass = classNames({
-      'focused': this.state.focused
+      'focused': this.props.focused
     })
     return (
-      <li className={menuItemClass}>{this.props.children}</li>
+      <li className={menuItemClass} onClick={this.clicked}>
+        <a href={this.props.children.route}>{this.props.children.label}</a>
+      </li>
     );
   }
 }
